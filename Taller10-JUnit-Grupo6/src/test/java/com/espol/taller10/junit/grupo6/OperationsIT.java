@@ -54,4 +54,20 @@ public class OperationsIT {
     public void tearDown() {
     }
     
+    @Test
+    @DisplayName("Verificar que la formula no sea null y que no esté vacia")
+    public void Op1(){
+        String formula=Operations.MakeFormula();
+        assertNotNull(formula);
+        assertFalse(formula.isEmpty());
+    }
+    
+    @Test
+    @DisplayName("Verificar que contengan los operadores")
+    public void Op2(){
+        String formula=Operations.MakeFormula();
+        assertTrue(formula.contains("+")||formula.contains("-")||formula.contains("*")||formula.contains("/"));
+    }
+    
+    
 }
